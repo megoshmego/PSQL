@@ -38,10 +38,7 @@ VALUES
 
 --------- my version
 
-CREATE TABLE airline (
-  id SERIAL PRIMARY KEY,
-  airline_name TEXT NOT NULL
-); 
+
 
 CREATE TABLE passenger (
   id SERIAL PRIMARY KEY,
@@ -53,16 +50,14 @@ CREATE TABLE passenger (
 
 CREATE TABLE itinerary(
   id SERIAL PRIMARY KEY,
-  departure TIMESTAMP NOT NULL,
-  arrival TIMESTAMP NOT NULL,
-  departure_airport_code_id INTEGER REFERENCES airport_code ON DELETE SET NULL,
-  arrival_airport_code_id INTEGER REFERENCES airport_code ON DELETE SET NULL,
+  airline_code TEXT NOT NULL
+  departure TIMESTAMP ON DELETE CASCADE,
+  arrival TIMESTAMP ON DELETE CASCADE,
+  departure_airport_code_id INTEGER REFERENCES airport_code ON DELETE CASCADE,
+  arrival_airport_code_id INTEGER REFERENCES airport_code ON DELETE CASCADE,
 );
 
-CREATE TABLE flight_manifest(
-  id SERIAL PRIMARY KEY,
-  airline_code INTEGER 
-);
+
 
 CREATE TABLE airport_code(
   id SERIAL PRIMARY KEY,
