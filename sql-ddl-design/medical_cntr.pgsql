@@ -14,7 +14,7 @@ CREATE TABLE specialties (
     doc_pt_ratio FLOAT,
     specialty_satisfaction FLOAT,
     specialty_revenue INTEGER
-);_
+);
 
 
 CREATE TABlE patients (
@@ -23,7 +23,7 @@ CREATE TABlE patients (
     phone FLOAT,
     first_name TEXT,
     last_name TEXT,
-    birthdate FLOAT NOT NULL,
+    birthdate FLOAT,
     patient_insurance BOOLEAN,
     patient_insurance_number INTEGER,
     patient_account_balance INTEGER
@@ -35,13 +35,13 @@ CREATE TABLE doctor (
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL, 
     specialty_id INTEGER REFERENCES specialties
-    patient_satisfaction FLOAT NOT NULL
+    patient_satisfaction FLOAT
 );
 
 
 CREATE TABLE insurance (
     id SERIAL PRIMARY KEY,
-    carrier TEXT NOT NOT NULL,
+    carrier TEXT,
     region TEXT,
-    copay INTEGER NOT NULL
+    copay INTEGER 
 );
