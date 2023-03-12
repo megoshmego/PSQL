@@ -46,7 +46,7 @@ CREATE TABlE discography
   
   
   
-  CREATE song
+ CREATE TABLE song
   (
    id SERIAL PRIMARY KEY,
    title TEXT NOT NULL,
