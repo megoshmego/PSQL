@@ -1,0 +1,1 @@
+talk to himank about format and run vacuum analyze, input into explain.depesz.com
